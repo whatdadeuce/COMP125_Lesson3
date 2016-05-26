@@ -1,58 +1,33 @@
 /*Main JavaScript File*/
 
 //IIFE
-(function(){
+(function () {
     "use strict";
+
+    var paragraphOne = document.getElementById("paragraphOne");
+    var paragraphTwo = document.getElementById("paragraphTwo");
+    var paragraphThree = document.getElementById("paragraphThree");
+    var paragraphs = [];
+    //alteranative array declaration
+    // var paragraphs = new Array();
     
-    //code goes here
-    console.log("App Started...");
-    //creates a reference and overrides <p> tag child text contents
-    var firstPTag = document.getElementById("firstParagraph");
-    //execute event listener to invoke clicked function
-    firstPTag.addEventListener("click", firstParagraphClicked) ;
-    var firstParagraphIsClicked = false;
-       
-    var myFirstParagraph = "This is my first paragraph. I am writing this for demonstration purposes." +
-    "This is the second line"
     
-    //name function
-    function writeToFirstParagraph()
-    {
-        //for debugging
-        console.log("Executing writeToFirstParagraph");
-             
-        firstParagraph.textContent = "IT'S ALIVE!!!";    
-        firstPTag.textContent = myFirstParagraph;
+    paragraphs[0] = "This is my first paragraph. It is only visible on the first page";
+    paragraphs[1] = "This is my second paragraph. It is only visible on the second page";
+    paragraphs[2] = "This is my third paragraph. It is only visible on the third page";
+    
+    // checks to see if paragraph exists
+    if (paragraphOne) {
+        paragraphOne.textContent = paragraphs[0];
     }
-    
-    function firstParagraphClicked()
-    {
-        if (firstParagraphIsClicked)
-        {
-            firstPTag.style.color = "#000000"
-            firstParagraphIsClicked = false;
-        }else
-        {
-            firstPTag.style.color = "red";
-            firstParagraphIsClicked = true;
-        }
+
+    if (paragraphTwo) {
+        paragraphTwo.textContent = paragraphs[1];
     }
-    
-    /*   
-    var writeToFirstParagraph = function()
-     {
-        //for debugging
-        console.log("Executing writeToFirstParagraph");
-        
-        //creates a reference and overrides <p> tag child text contents
-        var firstPTag = document.getElementById("firstParagraph");
-        firstParagraph.textContent = "IT'S ALIVE!!!";
+
+    if (paragraphThree) {
+        paragraphThree.textContent = paragraphs[2];
     }
-    var alias = writeToFirstParagraph;
-    */
-        
-    //execute function
-    writeToFirstParagraph();
-    
-    console.log(firstPTag);
+
+
 })();
